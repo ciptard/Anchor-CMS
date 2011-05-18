@@ -11,7 +11,9 @@ if (substr($path, -1, 1) != '/') { $path .= '/'; }
 $urlpath = str_ireplace(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '', $path);
 if (substr($urlpath, 0, 1) != '/') { $urlpath = '/' . $urlpath; }
 //	Theme path
-$themepath = $urlpath . 'themes/' . (isset($theme) ? $theme : 'default') . '/';
+require($path . '/config/settings.php');
+$themeurl = $urlpath . 'themes/' . (isset($theme) ? $theme : 'default') . '/';
+$themedir = $path . 'themes/' . (isset($theme) ? $theme : 'default') . '/';
 
 require($path . '/config/database.php');
 require_once $path . 'lib/ActiveRecord/ActiveRecord.php';
@@ -62,7 +64,7 @@ function layout($layout) {
 }
 
 function render($options = null) {
-  global $route, $path, $urlpath, $content;
+  global $route, $path, $urlpath, $themeurl, $themedir, $content;
   if (isset($options) === false || isset($options['view']) === false) {
     $view = implode('/', $route);
   } else if (is_string($options) === true) {
@@ -71,7 +73,9 @@ function render($options = null) {
   if (is_array($options) === true) {
     foreach ($options as $key => $value) { $$key = $value; }
   }
-  include $path . 'app/views/' . str_replace('..', '', $view) . '.php';
+  $view = str_replace('..', '', $view) . '.php';
+  if (file_exists($themedir . $view) === true) { include $themedir . $view; }
+  else { include $path . 'app/views/' . $view; }
 }
 
 ob_start();
