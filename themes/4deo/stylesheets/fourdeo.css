@@ -1,0 +1,72 @@
+/*
+ *      Check us out on Twitter: @fourdeo.
+ */
+ 
+* { margin: 0; padding: 0; border: none; outline: none; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; -webkit-transition: all .3s ease-in-out; -moz-transition: all .5s; transition: all .5s; }
+
+header, footer, section, aside { display: block; }
+
+body { background: #d1cec7 url(../images/bg.jpg) no-repeat 50% 0; font: 13px/26px "Tisa OT", "Tisa", "Skolar", "Scala", Georgia, serif; }
+
+header#top { background: #f1eee6 url(../images/top.jpg); display: block; width: 900px; margin: 0 auto; position: relative; height: 127px; box-shadow: 0 1px 1px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 1px rgba(0,0,0,.2); -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2); }
+    header#top a#logo { float: left; position: relative; height: 122px; width: 164px; margin-right: 2px; margin-left: 5px; display: block; text-indent: -999em; }
+        header#top a#logo span, header#top a#logo em { display: block; position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+        header#top a#logo em { background: url(../images/logo.png); opacity: 1; }
+            header#top a#logo:hover em { opacity: 0; }
+        header#top a#logo span { background: url(../images/logo_hover.png); opacity: 0; }
+            header#top a#logo:hover span { opacity: 1; }
+    header#top nav#links { float: left; height: 61px; width: 700px; }
+        header#top nav#links li { list-style: none; float: left; display: inline; }
+        header#top nav#links li a { color: #766e54; font: 17px/55px "Bebas Neue", "Bebas", sans-serif; text-decoration: none; display: block; float: left; padding: 0 35px; border-right: 1px solid rgba(213,202,182,.5); padding-top: 6px; position: relative; }
+            header#top nav#links li a:hover { color: #2f281e; background: rgba(255,255,255,.25); }
+            header#top nav#links li a:after { content: ' '; display: block; position: absolute; z-index: 200; opacity: .5; left: 0; top: 0; right: 0; bottom: 0; background: url(../images/nav_hover.png); }
+    header#top ul#products { clear: right; list-style: none; display: block; }
+        header#top ul#products li { float: left; display: inherit; line-height: 60px; }
+            header#top ul#products li:first-child { margin-left: 35px; }
+        header#top ul#products li a { display: block; height: 23px; width: 50px; position: relative; text-indent: -999em; background-image: url(../images/products.png); background-repeat: no-repeat; margin-top: 20px; margin-right: 15px; text-decoration: none; }
+            header#top ul#products li a span { display: block; position: absolute; left: -70px; width: 160px; height: 32px; line-height: 32px; padding-top: 5px; background: url(../images/tooltip.png); top: 90px; opacity: 0; z-index: -1; text-indent: 10px; }
+                header#top ul#products li a:hover span { top: 30px; opacity: 1; z-index: 1000; }
+                header#top ul#products li a span strong { color: #fff; float: left; text-shadow: 0 -1px 0 rgba(0,0,0,.1); font: 14px/34px "Bebas Neue", "Bebas", sans-serif; }
+                header#top ul#products li a span em { font-size: 10px; text-align: right; position: absolute; text-shadow: 0 1px 0 rgba(255,255,255,.1); color: #7f2e1c; float: right; }
+             header#top ul#products li#anchor a { background-position: 0 0; }
+                header#top ul#products li#anchor a:hover { background-position: 0 -23px; }
+             header#top ul#products li#boathouse a { background-position: -50px 0; }
+                header#top ul#products li#boathouse a:hover { background-position: -50px -23px; }
+             header#top ul#products li#sailboat a { background-position: -100px 0; }
+                header#top ul#products li#sailboat a:hover { background-position: -100px -23px; }
+             header#top ul#products li#outboard a { background-position: -150px 0; }
+                header#top ul#products li#outboard a:hover { background-position: -150px -23px; }
+    header#top form#search { float: right; margin-right: 19px; background: url(../images/search.png) no-repeat 0 0; width: 207px; height: 36px; position: relative; margin-top: 14px; }
+        header#top form#search input#q { -webkit-appearance: none; background: transparent; width: 182px; margin: 4px; padding: 5px 8px; font: 12px "Tisa OT", "Tisa", "Skolar", "Scala", Georgia, serif; color: #636157; }
+            header#top form#search input#q:focus { background: rgba(255,255,255,.2); }
+            header#top form#search input#q::-webkit-input-placeholder { color: #c3b59a; }
+        header#top form#search input#glasses { position: absolute; right: 12px; top: 13px; }
+            header#top form#search input#glasses:active { top: 15px; }
+                
+section#banner { border: 5px solid #f7f4ef; box-shadow: 0 1px 1px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 1px rgba(0,0,0,.2); -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2); width: 890px; margin: 40px auto; position: relative; z-index: 20; }
+    section#banner a, section#banner img { display: block; text-decoration: none; -webkit-user-select: none; }
+    section#banner span { width: 900px; height: 352px; }   
+    section#banner span, ul#thumbs a span { position: absolute; left: -5px; top: -5px; z-index: 999; opacity: 0; background: url(../images/overlay.png); display: block; }
+        section#banner a:hover span, ul#thumbs a:hover span { opacity: .5; }
+        
+ul#thumbs { margin: 0 auto; width: 900px; height: 240px; list-style: none; }
+    ul#thumbs li { border: 5px solid #f7f4ef; box-shadow: 0 1px 1px rgba(0,0,0,.2); -moz-box-shadow: 0 1px 1px rgba(0,0,0,.2); -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2); width: 240px; height: 185px; float: left; margin-right: 75px; }
+        ul#thumbs li:last-child { margin-right: 0; }
+        ul#thumbs li a { text-decoration: none; display: block; position: relative; }
+            ul#thumbs li a span { width: 240px; height: 185px; }
+    
+footer { background: #f7f4ef url(../images/footer.jpg) no-repeat 0 0; position: relative; margin: 0 auto; width: 900px; text-shadow: 0 1px 0 rgba(255,255,255,.25); }
+    footer p { height: 70px; line-height: 70px; display: block; position: relative; }
+        footer p:after { content: ' '; display: block; position: absolute; left: 250px; top: 8px; z-index: 99999; background: url(../images/fade.png); width: 240px; height: 60px; }
+        footer p strong { font: 16px/70px "Bebas Neue", "Bebas", sans-serif; color: #9b8d77; padding-left: 30px; padding-top: 8px; display: block; float: left; }
+        footer p span { position: absolute; text-align: right; right: 20px; padding-right: 81px; display: block; color: #696054; font-style: italic; font-size: 12px; }
+            footer p span a { display: block; text-indent: -999em; position: absolute; right: 0; top: 0; text-align: left; width: 81px; }
+    footer nav { display: block; padding: 30px 0; min-height: 200px; margin-left: 50px; width: 900px; }
+        footer nav ul { float: left; width: 144px; list-style: none; }
+        footer nav ul li { display: block; }
+            footer nav ul li a { font-size: 12px; text-decoration: none; color: #7c756e; }
+                footer nav ul li a:hover { color: #c5614a; }
+            footer nav ul li strong a { display: block; font: 16px/28px "Bebas Neue", "Bebas", sans-serif; color: #574a35; }
+                footer nav ul li strong a:hover { color: #382f20; }
+
+.amp { font-family: Baskerville, GoudyBookletter1911, "Goudy Old Style", Palatino, "Book Antiqua", serif; font-size: 110%; padding-right: 3px; }
