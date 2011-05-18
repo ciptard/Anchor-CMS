@@ -1,10 +1,38 @@
 <?php
-	//	Run Anchor
-	//require('core/loader.php');
+$version = '0.2.1';
+
 session_start();
 require_once 'routes.php';
-require_once 'core/paths.php';
-require_once 'core/connect.php';
+
+//	Return the path of the main directory
+$path = str_replace('\\', '/', dirname(__FILE__));
+if (substr($path, -1, 1) != '/') { $path .= '/'; }
+//	Get the URL path (from http://site.com/ onwards)
+$urlpath = str_ireplace(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']), '', $path);
+if (substr($urlpath, 0, 1) != '/') { $urlpath = '/' . $urlpath; }
+//	Theme path
+$themepath = $urlpath . 'themes/' . (isset($theme) ? $theme : 'default') . '/';
+
+require($path . '/config/database.php');
+require_once $path . 'lib/ActiveRecord/ActiveRecord.php';
+
+try {
+	$db = new PDO("mysql:host=$host;dbname=$name", $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	
+	$connections = array(
+		'development' => "mysql://$user:$pass@$host/$name"
+	);
+	// initialize ActiveRecord
+	ActiveRecord\Config::initialize(function($cfg) use ($connections)
+	{
+	  global $path;
+    $cfg->set_model_directory($path . 'app/models');
+    $cfg->set_connections($connections);
+	});
+} catch(PDOException $e) {
+	die($e->getMessage());
+}
 
 function throw403() {
   global $path, $urlpath;
