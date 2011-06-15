@@ -9,7 +9,7 @@
 		<label for="theme">Current theme:</label>
 			<select name="theme">
 			<?php
-			if($dh = opendir($path . '/themes')) {
+			if($dh = opendir(BASE_PATH . '/themes')) {
         while(($file = readdir($dh)) !== false) {
           if(($file != '.') && ($file != '..')) {
           	$title = ucwords(str_replace('_', ' ', $file));

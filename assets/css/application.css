@@ -18,7 +18,7 @@ body { font: 11px/24px "Helvetica Neue", sans-serif; color: #666; -webkit-box-sh
 div#wrap { width: 600px; margin: 0 auto; padding-top: 100px; }
 
 h1#logo { width: 100px; height: 32px; margin-bottom: 50px; float: left; }
-	h1#logo a { height: 32px; width: 32px; display: block; text-indent: -999em; background: url(img/logo.png) no-repeat 0 0; opacity: .4; -webkit-transition: opacity .5s; -moz-transition: opacity .5s; transition: opacity .5s; }
+	h1#logo a { height: 32px; width: 32px; display: block; text-indent: -999em; background: url(../img/logo.png) no-repeat 0 0; opacity: .4; -webkit-transition: opacity .5s; -moz-transition: opacity .5s; transition: opacity .5s; }
 		h1#logo a:hover { opacity: .8; }
 		h1#logo a:active { margin-top: 1px; margin-bottom: -1px; }
 		

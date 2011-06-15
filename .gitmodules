@@ -4,3 +4,6 @@
 [submodule "lib/ActiveRecord"]
 	path = lib/ActiveRecord
 	url = http://github.com/kla/php-activerecord.git
+[submodule "lib/phpass"]
+	path = lib/phpass
+	url = https://github.com/RyanGWU82/phpass.git

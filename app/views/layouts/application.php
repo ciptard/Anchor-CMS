@@ -11,10 +11,10 @@
 	<title>Random &middot; Title</title>
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="<?php echo $urlpath; ?>themes/default/global.css" />
+	<link rel="stylesheet" href="<?php echo URL_PATH; ?>assets/css/application.css" />
 
 	<!-- Scripts -->
-	<script src="<?php echo $urlpath; ?>themes/default/global.js"></script>
+	<script src="<?php echo URL_PATH; ?>assets/css/application.js"></script>
 	
 	<meta name="description" content="This is a default Anchor CMS theme.'; ?>">
 
@@ -22,7 +22,7 @@
 <body class="home">
   <div id="wrap">
   	<h1 id="logo">
-  		<a href="<?php echo $urlpath; ?>" title="Random">Random</a>
+  		<a href="<?php echo URL_PATH; ?>" title="Random">Random</a>
   	</h1>
     <?php echo $content; ?>
   </div>
