@@ -12,7 +12,7 @@ class Admin_PostsController {
     require_login();
     $post = Post::find($post[1]);
     if (isset($_POST['post']) === true) {
-      if ($post->update_attributes($_POST['post']) === true) {
+      if ($post->update_attributes(array_merge($_POST['post'], $_FILES['post']['tmp_name'])) === true) {
         echo "<h1>Post updated successfully</h1>";
         return;
       }
