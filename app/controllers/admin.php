@@ -3,6 +3,7 @@ layout('admin');
 
 class AdminController {
   function settings() {
+    global $sitename, $theme, $clean_urls, $callhome;
     require_login();
     if (isset($_POST['sitename']) === true) {
       $update = file_put_contents(BASE_PATH . 'config/settings.php', '<?php
@@ -31,8 +32,11 @@ class AdminController {
       	$callhome = ' . (isset($_POST['callhome']) ? 'true' : 'false') . ';
       
       ?>');
+      $sitename = $_POST['sitename'];
+      $theme = $_POST['theme'];
+      $clean_urls = isset($_POST['clean_urls']);
+      $callhome = isset($_POST['callhome']);
     }
-    include BASE_PATH . 'config/settings.php';
     render(array('sitename' => $sitename, 'theme' => $theme, 'clean_urls' => $clean_urls, 'callhome' => $callhome));
   }
 }
