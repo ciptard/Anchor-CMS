@@ -9,6 +9,7 @@ class Admin_PostsController {
   }
   
   function edit($post) {
+    require_login();
     $post = Post::find($post[1]);
     if (isset($_POST['post']) === true) {
       if ($post->update_attributes($_POST['post']) === true) {
@@ -21,6 +22,7 @@ class Admin_PostsController {
   }
   
   function create() {
+    require_login();
     if (isset($_POST['post']) === true) {
       $post = new Post($_POST['post']);
       if ($post->save() === true) {

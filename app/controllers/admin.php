@@ -3,7 +3,7 @@ layout('admin');
 
 class AdminController {
   function settings() {
-    if (User::is_logged_in() === false) { throw403(); }
+    require_login();
     if (isset($_POST['sitename']) === true) {
       $update = file_put_contents(BASE_PATH . 'config/settings.php', '<?php
       
@@ -34,29 +34,5 @@ class AdminController {
     }
     include BASE_PATH . 'config/settings.php';
     render(array('sitename' => $sitename, 'theme' => $theme, 'clean_urls' => $clean_urls, 'callhome' => $callhome));
-  }
-  
-  function users_edit($user) {
-    $user = User::find($user[1]);
-    if (isset($_POST['user']) === true) {
-      if ($user->update_attributes($_POST['user']) === true) {
-        echo "<h1>User updated successfully</h1>";
-        return;
-      }
-      echo "<h1>User failed to update</h1>";
-    }
-    render(array('user' => $user));
-  }
-  
-  function users_new() {
-    if (isset($_POST['user']) === true) {
-      $user = new User($_POST['user']);
-      if ($user->save() === true) {
-        echo "<h1>User created successfully</h1>";
-        return;
-      }
-      echo "<h1>User failed to create</h1>";
-    }
-    render();
   }
 }

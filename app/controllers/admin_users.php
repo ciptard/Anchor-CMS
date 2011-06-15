@@ -9,6 +9,7 @@ class Admin_UsersController {
   }
   
   function edit($user) {
+    require_login();
     $user = User::find($user[1]);
     if (isset($_POST['user']) === true) {
       if ($user->update_attributes($_POST['user']) === true) {
@@ -21,6 +22,7 @@ class Admin_UsersController {
   }
   
   function create() {
+    require_login();
     if (isset($_POST['user']) === true) {
       $user = new User($_POST['user']);
       if ($user->save() === true) {
