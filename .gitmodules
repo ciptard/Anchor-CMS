@@ -1,0 +1,6 @@
+[submodule "lib/Plank"]
+	path = lib/Plank
+	url = http://github.com/SpenserJ/Plank.git
+[submodule "lib/ActiveRecord"]
+	path = lib/ActiveRecord
+	url = http://github.com/kla/php-activerecord.git
