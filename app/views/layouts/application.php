@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="<?php echo URL_PATH; ?>assets/css/application.css" />
 
 	<!-- Scripts -->
-	<script src="<?php echo URL_PATH; ?>assets/css/application.js"></script>
+	<script src="<?php echo URL_PATH; ?>assets/js/application.js"></script>
 	
 	<meta name="description" content="This is a default Anchor CMS theme.'; ?>">
 

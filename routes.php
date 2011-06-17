@@ -15,6 +15,8 @@ $routes = array(
     'admin/logout' => 'users#logout',
     'latest' => 'posts#latest',
     'random' => 'posts#random',
+    '.*\.css' => 'posts#show_css',
+    '.*\.js' => 'posts#show_js',
     '.*' => 'posts#show'
 );
 

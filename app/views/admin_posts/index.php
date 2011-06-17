@@ -3,7 +3,7 @@
 <ul id="list">
 <?php
 foreach ($posts as $post) {
-	echo '<li><a href="' . URL_PATH . 'admin/posts/edit/' . $post->id . '" title="' . $post->title . '">' . $post->title . '<span>' . time_ago(strtotime($post->date)) . '</span><img src="' . URL_PATH . 'assets/img/edit_link.png" alt="Edit this post" /></a></li>';
+	echo '<li><a href="' . URL_PATH . 'admin/posts/edit/' . $post->id . '" title="' . $post->title . '">' . $post->title . '<span>' . time_ago(strtotime($post->updated_at)) . '</span><img src="' . URL_PATH . 'assets/img/edit_link.png" alt="Edit this post" /></a></li>';
 }
 ?>
 </ul>

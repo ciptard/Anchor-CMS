@@ -16,6 +16,22 @@ class PostsController {
     render(array('post' => $post));
   }
   
+  function show_css($post) {
+    layout('plaintext');
+    $post = Post::find_by_slug(str_replace('.css', '', $post[0]));
+    if ($post === false || empty($post->css)) { return; }
+    header('Content-Type: text/css');
+    echo $post->css;
+  }
+  
+  function show_js($post) {
+    layout('plaintext');
+    $post = Post::find_by_slug(str_replace('.js', '', $post[0]));
+    if ($post === false || empty($post->js)) { return; }
+    header('Content-Type: text/javascript');
+    echo $post->js;
+  }
+  
   function latest() {
     header('Location: ' . URL_PATH . Post::find(array('select' => 'slug', 'limit' => 1, 'order' => 'id DESC'))->slug);
   }

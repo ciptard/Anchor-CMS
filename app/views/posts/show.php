@@ -1,3 +1,4 @@
+<?php if (empty($post->css) === false) { echo '<link rel="stylesheet" href="' . URL_PATH . $post->slug . '.css" />'; } ?>
 <div id="frame">
 	<ul>
 		<li><strong>Post ID:</strong> <?php echo $post->id; ?></li>
@@ -11,3 +12,4 @@
 	echo $post->content;
 ?>
 </article>
+<?php if (empty($post->js) === false) { echo '<script src="' . URL_PATH . $post->slug . '.js"></script>'; } ?>
